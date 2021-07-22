@@ -5,12 +5,10 @@ class encn_Cambridge_tc {
         this.maxexample = 2;
         this.word = '';
     }
-
+E
     async displayName() {
-        let locale = await api.locale();
-        if (locale.indexOf('CN') != -1) return '剑桥英汉双解(繁体)';
-        if (locale.indexOf('TW') != -1) return '劍橋英漢雙解(繁体)';
-        return 'Cambridge EN->CN Dictionary (TC)';
+        
+        return 'Cambridge EN->EN Dictionary';
     }
 
     setOptions(options) {
@@ -36,7 +34,7 @@ class encn_Cambridge_tc {
                 return node.innerText.trim();
         }
 
-        let base = 'https://dictionary.cambridge.org/search/english-chinese-traditional/direct/?q=';
+        let base = 'https://dictionary.cambridge.org/search/english/';
         let url = base + encodeURIComponent(word);
         let doc = '';
         try {
